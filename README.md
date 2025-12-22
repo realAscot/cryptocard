@@ -5,11 +5,13 @@
 ![Logo](./assets/cryptocard_256x256.png)
 
 - [✏️ Cryptocard](#️-cryptocard)
+  - [Vorschau](#vorschau)
   - [Versionen](#versionen)
     - [JavaScript-Version](#javascript-version)
     - [Rust-Version](#rust-version)
   - [Installation](#installation)
   - [ToDo](#todo)
+    - [JS-Version](#js-version)
   - [Lizenz](#lizenz)
 
 ---
@@ -28,6 +30,12 @@ Optional ist weiterhin ein Export in eine `.svg`-Datei möglich, falls dies ben�
 Damit dieser Version hier weitestgehend mit dem Video kompatibel bleibt, habe ich alle Bezeichner im Quellcode namentlich belassen wie in seinem Video.
 
 Eine weitere Portierung als reines Stand-Alone-CLI-Tool ist geplant und erfolgt in `RUST`
+
+## Vorschau
+
+Eine Vorschau gibt es [hier](https://www.ionivation.com/extern/cryptocard.html).
+
+---
 
 ## Versionen
 
@@ -56,7 +64,11 @@ Einfach die HTML herunterladen und lokal per Doppelklick im Browser starten.
 
 ## ToDo
 
+### JS-Version
+
 - [ ] `.cvs` Export implementieren
+- [ ] `.cvs` Import implementieren
+- [ ] PDF Generierung Clientseitig im Browser
 
 ---
 
