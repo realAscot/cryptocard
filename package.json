@@ -1,0 +1,19 @@
+{
+  "name": "cryptocard-esbuild",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node build/dev.mjs",
+    "build": "node build/build.mjs",
+    "clean": "node build/clean.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  },
+  "description": "**Sichere Passwörter – ganz ohne Passwortmanager**",
+  "main": "main.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

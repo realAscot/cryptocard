@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+  <!--
+    (C) 2025 Adam Skotarczak (MIT)
+    Repository: https://github.com/realAscot/cryptocard
+    Inspiriert durch: https://youtu.be/3Hw0yJ6fraI
+  -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cryptocard v1.1</title>
+  <link id="favicon" rel="icon" type="image/x-icon">
+  <link rel="stylesheet" href="./style.css" data-inline="true" />
+</head>
+<body>
+  <img id="logo" alt="Logo">
+  <h1>✏️ CryptoCard Generator</h1>
+  <form>
+    <fieldset>
+      <legend>Mögliche Zeichen für Passwörter in der CryptoCard:</legend>
+      <input id="a1" type="text" placeholder="Eingabe a1">
+      <input id="a2" type="text" placeholder="Eingabe a2">
+      <input id="a3" type="text" placeholder="Eingabe a3">
+      <input id="a4" type="text" placeholder="Eingabe a4">
+      <button id="resetButton" type="button">🔄 Reset</button>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Dimension der CryptoCard:</legend>
+      <div style="display: flex; gap: 1em; flex-wrap: wrap; align-items: center;">
+        <div>
+          <label for="spalten">Spalten (max. 26):</label>
+          <input 
+            id="spalten" 
+            type="number" 
+            value="15" 
+            min="1" 
+            max="26" 
+            placeholder="Größe in X-Richtung (1–26)">
+        </div>
+        <div>
+          <label for="zeilen">Zeilen (max. 15):</label>
+          <input 
+            id="zeilen" 
+            type="number" 
+            value="10" 
+            min="1" 
+            max="15" 
+            placeholder="Größe in Y-Richtung (1–15)">
+        </div>
+      </div>
+    </fieldset>
+    <br>
+    <fieldset>
+      <button id="makeCryptoCard" type="button">♻️ Neue CryptoCard erzeugen</button>
+      <button id="exportButton" type="button" disabled>💾 CryptoCard exportieren (.cvs)</button>
+      <button id="printButton" type="button" disabled>🖨️ CryptoCard drucken</button>
+    </fieldset>
+  </form>
+
+  <div id="cryptocard" style="display: flex; justify-content: center; margin-top: 20px;">
+     <!-- Die Tabelle wird hier per JS eingefügt -->
+  </div>
+  </main>
+  <script type="module" src="./main.js" data-inline="true"></script>
+</body>
+</html>
