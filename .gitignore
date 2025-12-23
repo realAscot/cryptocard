@@ -1,1 +1,7 @@
-.svcode
+node_modules/
+dist/*
+.DS_Store
+misc/
+src/main.bundle.*
+
+!dist/cryptocard.html
