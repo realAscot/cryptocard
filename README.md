@@ -21,6 +21,9 @@ Cryptocard ist inspiriert durch das [Video](https://youtu.be/3Hw0yJ6fraI?si=IPV1
 
 Dort im Video wird auch erläutert wie diese Cryptocard zu verwenden ist.
 
+> ***⚠️ Kleiner Tipp:***  
+> In der Druckvorschau kann vor dem Druck die Größe der Tabelle nochmals skaliert werden.
+
 Die Grundidee fand ich sehr interessant, allerdings empfand ich das ursprüngliche Vorgehen mit Python als umständlich: Es erforderte eine Python-Laufzeitumgebung und die Konfiguration erfolgte direkt im Quellcode.
 
 Daher habe ich Cryptocard in JavaScript portiert und alle benötigten Assets in eine einzelne HTML-Datei integriert. Vorteile:  
@@ -38,6 +41,9 @@ Eine weitere Portierung als reines Stand-Alone-CLI-Tool ist geplant und erfolgt 
 ## Vorschau
 
 ✈️ Eine Vorschau und die aktuelle Version Online gibt es [hier](https://www.ionivation.com/extern/cryptocard.html).
+
+> ![QR-Code](./src/assets/cryptocard_qr.svg)  
+> Der QR-Code führt Dich sofort zur Online-Version.
 
 ---
 
@@ -62,12 +68,19 @@ Wechsel in das Projektverzeichnis dieses Projekt und installiere die Dependencie
 npm ci
 ```
 
+oder
+
+```bash
+npm install
+```
+
 Anschliessend die HTML Datei bauen mit:
 
 ```bash
 npm run dev
 ```
 
+Es wird die Datei `./dist/cryptocard.html` erstellt.
 Um Dir diese Schritte zu ersparen, habe ich die aktuelle Datei unter `./dist` belassen.
 So lange Du also keine Änderungen durchführen musst, kannst Du diese verwenden.
 
@@ -89,7 +102,10 @@ Einfach die HTML herunterladen und lokal per Doppelklick im Browser starten.
 ## Changelog
 
 - *1.1.0*
-  - [x] Umbau auf
+  - [x] ⚠️ Breaking Changes  
+        Komplett auf Modulversion (ESM) mit esbuild umgebaut.  
+- *1.0.0*
+  - [x] Erste Version, händisch mit commonJS erstellt.
 
 ---
 
