@@ -84,3 +84,4 @@ html = html.replace(
 fs.writeFileSync(path.join(DIST, "cryptocard.html"), html, "utf8");
 
 console.log("OK: dist/cryptocard.html erstellt (Single-File).");
+
