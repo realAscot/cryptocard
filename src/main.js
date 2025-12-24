@@ -1,5 +1,14 @@
+/**
+ * CryptoCard.js
+ * 
+ * Ein Programm zum erstellen von Passwortkarten.
+ * Sichere Passwörter – ganz ohne Passwortmanager.
+ * 
+ */
+
 import logo from "./assets/cryptocard_256x256.png";
 import favicon from "./favicon.ico";
+import { tableToCsv, exportTableAsCsv } from "./modules/table-csv.mjs";
 
 const imgLogoElement = document.getElementById("logo");
 imgLogoElement.src = logo;
@@ -15,6 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("resetButton")
     .addEventListener("click", () => resetInputForms());
+
+  document
+    .getElementById("exportButton")
+    .addEventListener("click", () => {
+      const table = document.getElementById("cryptoCardTable");
+      exportTableAsCsv(table, "cryptocard.csv", { delimiter: ";" })
+    });
 
   document
     .getElementById("printButton")
@@ -36,7 +52,7 @@ let zeilen, spalten;
 let a1, a2, a3, a4;
 
 /**
- * Imputfelder mit Standartwerten füllen
+ * Inputfelder mit Standartwerten aus der Konfiguration füllen
  *
  */
 function resetInputForms() {
@@ -47,7 +63,7 @@ function resetInputForms() {
 }
 
 /**
- * Holt dynamische Werte aus dem HTML-Dokument
+ * Holt dynamische Werte des Nutzers aus dem HTML-Dokument
  * 
  */
 function getImputForms() {
@@ -100,7 +116,9 @@ function zufallszeichen(...sets) {
 }
 
 /**
+ * Hilfsfunktion:
  * Erstellt eine HTML-Tabelle dynamisch
+ * 
  * @param {number} rows Anzahl der Zeilen (ohne Legende)
  * @param {number} cols Anzahl der Spalten (ohne Legende)
  * @param {(row: number, col: number) => string} cellFn Funktion zur Befüllung der Zellen
@@ -110,6 +128,7 @@ function zufallszeichen(...sets) {
 function makeTableCryptoCard(rows, cols, cellFn) {
   const table = document.createElement("table");
   table.style.borderCollapse = "collapse";
+  table.className="primary"
 
   for (let r = 0; r <= rows; r++) {
     const tr = document.createElement("tr");
@@ -151,16 +170,16 @@ function makeTableCryptoCard(rows, cols, cellFn) {
 function makeCryptoCard() {
   getImputForms();
   const container = document.getElementById("cryptocard");
-  const table = makeTableCryptoCard(zeilen, spalten, () =>
-    zufallszeichen(a1, a2, a3, a4)
+  const table = makeTableCryptoCard(zeilen, spalten, () => zufallszeichen(a1, a2, a3, a4)
   );
   container.innerHTML = "";
   table.id = "cryptoCardTable";
   container.appendChild(table);
 
-  /* Schaltfläche "Drucken" aktivieren wenn Tabelle vorhanden */
+  /* Schaltfläche "Drucken" und "Export" aktivieren wenn Tabelle vorhanden */
   if (table) {
     document.getElementById("printButton").disabled = false;
+    document.getElementById("exportButton").disabled = false;
   }
 }
 

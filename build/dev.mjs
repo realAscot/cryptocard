@@ -39,3 +39,4 @@ const { host, port } = await ctx.serve({
 console.log(`Dev-Server: http://${host}:${port}`);
 console.log("Hinweis: In src/index.html muss für Dev der Script-Tag auf main.bundle.js zeigen, wenn du Bundle nutzen willst.");
 console.log("Standardmäßig kannst du auch direkt main.js als ESM laden (ohne Bundle).");
+

@@ -9,3 +9,4 @@ if (fs.existsSync(DIST)) {
 } else {
   console.log("OK: dist/ existiert nicht.");
 }
+

@@ -32,7 +32,7 @@ Daher habe ich Cryptocard in JavaScript portiert und alle benötigten Assets in 
 - Konfiguration erfolgt benutzerfreundlich ohne Änderungen am Quellcode  
 - Kein Export und Import in Tabellenkalkulationen erforderlich  
 
-Optional ist weiterhin ein Export in eine `.svg`-Datei möglich, falls dies benötigt wird.
+Optional ist weiterhin ein Export in eine `.csv`-Datei möglich, falls dies benötigt wird.
 
 Damit dieser Version hier weitestgehend mit dem Video kompatibel bleibt, habe ich alle Bezeichner im Quellcode namentlich belassen wie in seinem Video.
 
@@ -93,18 +93,22 @@ Einfach die HTML herunterladen und lokal per Doppelklick im Browser starten.
 
 ## ToDo
 
-- [ ] `.cvs` Export implementieren
-- [ ] `.cvs` Import implementieren
+- [ ] `.csv` Export implementieren
+- [ ] `.csv` Import implementieren
 - [ ] PDF Generierung Clientseitig im Browser
 
 ---
 
 ## Changelog
 
-- *1.1.0*
+- *1.2.0*  
+  - [x] `.csv`Export integriert  
+  - [x] Einige Dateien aus Version 1.1.0 entfernt und Projekt bereinigt.
+        Der Ordnung halber, habe ich die Dateien im Repo belassen.
+- *1.1.0*  
   - [x] ⚠️ Breaking Changes  
         Komplett auf Modulversion (ESM) mit esbuild umgebaut.  
-- *1.0.0*
+- *1.0.0*  
   - [x] Erste Version, händisch mit commonJS erstellt.
 
 ---
