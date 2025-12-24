@@ -1,6 +1,12 @@
 // table-csv.mjs
 // ESM-Modul: HTMLTableElement -> CSV-String (+ optionaler Download)
 
+/**
+ * 
+ * @param {*} value 
+ * @param {*} delimiter 
+ * @returns 
+ */
 function escapeCsvCell(value, delimiter) {
   let s = value == null ? "" : String(value);
   // CSV: Quotes verdoppeln, und bei Sonderzeichen in Quotes setzen

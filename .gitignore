@@ -1,9 +1,8 @@
 node_modules/
-dist/*
-.DS_Store
 misc/
-src/main.bundle.*
 .vscode/
+releases/
 
+src/main.bundle.*
+dist/*
 !dist/cryptocard.html
-

@@ -101,10 +101,12 @@ Einfach die HTML herunterladen und lokal per Doppelklick im Browser starten.
 
 ## Changelog
 
+- *1.2.1*  
+  - [x] Tippfehler im Frontend korrigiert  
 - *1.2.0*  
   - [x] `.csv`Export integriert  
   - [x] Einige Dateien aus Version 1.1.0 entfernt und Projekt bereinigt.
-        Der Ordnung halber, habe ich die Dateien im Repo belassen.
+        Der Ordnung halber, habe ich die Dateien im Repo belassen.  
 - *1.1.0*  
   - [x] ⚠️ Breaking Changes  
         Komplett auf Modulversion (ESM) mit esbuild umgebaut.  

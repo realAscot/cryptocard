@@ -13,6 +13,19 @@ import { tableToCsv, exportTableAsCsv } from "./modules/table-csv.mjs";
 const imgLogoElement = document.getElementById("logo");
 imgLogoElement.src = logo;
 
+/* ======== KONFIGURATION ======== */
+const a1Default = "abcdefghijklmnopqrstuvwxyz";
+const a2Default = "ABCDEFGHJKLMNPQRSTUVWXYZ";
+const a3Default = "1234567890";
+const a4Default = "#+*!?=§$%&()";
+
+const maxZEILEN = 15; // Maximale Höhe der Cryptocard
+const maxSPALTEN = 26; // Maximale Breite der Cryptocard
+
+let zeilen, spalten;
+let a1, a2, a3, a4;
+
+// Buttons im HTML an Programm binden:
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("favicon").href = favicon;
@@ -38,18 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
   resetInputForms(a1, a2, a3, a4);
 });
-
-/* ======== KONFIGURATION ======== */
-const a1Default = "abcdefghijklmnopqrstuvwxyz";
-const a2Default = "ABCDEFGHJKLMNPQRSTUVWXYZ";
-const a3Default = "1234567890";
-const a4Default = "#+*!?=§$%&()";
-
-const maxZEILEN = 15; // Maximale Höhe der Cryptocard
-const maxSPALTEN = 26; // Maximale Breite der Cryptocard
-
-let zeilen, spalten;
-let a1, a2, a3, a4;
 
 /**
  * Inputfelder mit Standartwerten aus der Konfiguration füllen
@@ -184,8 +185,10 @@ function makeCryptoCard() {
 }
 
 /**
- * Öffnet Popup und druckt Tabelle
- *
+ * Öffnet Popup und druckt Tabelle im Browser
+ * 
+ * @param {*} tableId 
+ * @returns 
  */
 function printCryptoCard(tableId) {
   const table = document.getElementById(tableId);
@@ -231,11 +234,7 @@ function printCryptoCard(tableId) {
   // Tabelle einsetzen (klonen, damit Original-DOM unberührt bleibt)
   doc.getElementById("table-container").appendChild(table.cloneNode(true));
 
-  // Print-Button verbinden
-  // doc.getElementById("print-btn").addEventListener("click", () => printWindow.print());
-
   printWindow.print();
   printWindow.focus();
 }
-
 
