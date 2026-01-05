@@ -1,25 +1,55 @@
 # ✏️ Cryptocard
 
-**Sichere Passwörter – ganz ohne Passwortmanager**  
-
 ![Logo](./src/assets/cryptocard_256x256.png)
 
+**Sichere Passwörter – ganz ohne Passwortmanager**  
+
+Cryptocard ist ein browserbasiertes Tool zur deterministischen Passworterzeugung – offline, ohne Passwortmanager und ohne Cloud.  
+  
+🔐 Deterministische Passworterzeugung  
+🌐 Läuft komplett offline im Browser  
+📄 Einfache Ausgabe als Tabelle / CSV / Print  
+
 - [✏️ Cryptocard](#️-cryptocard)
+  - [Sicherheitshinweis](#sicherheitshinweis)
+  - [Funktionsweise](#funktionsweise)
+    - [Passwort-Erzeugung](#passwort-erzeugung)
+    - [Passwortbuch (optional)](#passwortbuch-optional)
+    - [Sicherheitsprinzip](#sicherheitsprinzip)
   - [Vorschau](#vorschau)
   - [Versionen](#versionen)
     - [JavaScript-Version](#javascript-version)
   - [Build und Installation](#build-und-installation)
     - [Build](#build)
-    - [Installation](#installation)
+    - [Installation (für Anwender)](#installation-für-anwender)
   - [ToDo](#todo)
   - [Changelog](#changelog)
   - [Lizenz](#lizenz)
 
+![Offline](https://img.shields.io/badge/Offline-Yes-green)
+![No Tracking](https://img.shields.io/badge/Tracking-No-brightgreen)
+
 ---
 
-Cryptocard ist inspiriert durch das [Video](https://youtu.be/3Hw0yJ6fraI?si=IPV1VTojr4aUvfAW) von [@rolfsnbahn](https://www.youtube.com/@rolfsnbahn) auf YouTube.
+## Sicherheitshinweis
 
-Dort im Video wird auch erläutert wie diese Cryptocard zu verwenden ist.
+Cryptocard speichert **keine Passwörter**, **keine Master-Passwörter** und sendet **keine Daten** über das Netzwerk.
+Die Generierung erfolgt vollständig lokal im Browser.
+
+⚠️ Die Sicherheit hängt maßgeblich von:  
+
+- der Geheimhaltung der gewählten Parameter  
+- der Qualität des verwendeten Drucks  
+- der sicheren Aufbewahrung der Karte  
+
+Cryptocard ersetzt kein vollwertiges Passwortmanagement für hochsensible Anwendungen.
+
+---
+
+Cryptocard ist inspiriert durch dieses [Video](https://youtu.be/3Hw0yJ6fraI?si=IPV1VTojr4aUvfAW) von [@rolfsnbahn](https://www.youtube.com/@rolfsnbahn) auf YouTube.
+
+Im Video wird die grundlegende Idee sowie die Verwendung der Cryptocard erläutert.
+Das Video und die Idee stammt nicht von mir!
 
 > ***⚠️ Kleiner Tipp:***  
 > In der Druckvorschau kann vor dem Druck die Größe der Tabelle nochmals skaliert werden.
@@ -37,6 +67,41 @@ Optional ist weiterhin ein Export in eine `.csv`-Datei möglich, falls dies ben�
 Damit dieser Version hier weitestgehend mit dem Video kompatibel bleibt, habe ich alle Bezeichner im Quellcode namentlich belassen wie in seinem Video.
 
 Eine weitere Portierung als reines Stand-Alone-CLI-Tool ist geplant und erfolgt in `RUST`
+
+---
+
+## Funktionsweise
+
+Cryptocard erstellt eine individuelle Zeichen-Tabelle, die als Grundlage für reproduzierbare Passwörter dient.
+
+- Zu Beginn stehen **vier Eingabefelder** zur Verfügung, in die Zeichen eingegeben werden, aus denen die Tabelle erzeugt wird.
+- Die Felder sind bereits mit **sinnvollen Standardwerten** vorbelegt und können optional angepasst werden.
+- Mit einem Klick auf **„Neue CryptoCard“** wird die Tabelle generiert.
+
+Die erzeugte Tabelle kann anschließend **ausgedruckt oder digital gespeichert** werden und dient als persönliche Cryptocard.
+
+### Passwort-Erzeugung
+
+Für die spätere Nutzung merkt man sich ein **festes Muster**, ähnlich dem Wischmuster eines Smartphones.
+
+- Ein Passwort entsteht, indem man an einer **Startkoordinate** (z. B. `D4`) beginnt
+- und dem gewählten Muster über die Tabelle folgt.
+- Die Zeichen entlang dieses Musters ergeben das Passwort.
+
+### Passwortbuch (optional)
+
+Statt Passwörter direkt zu speichern, kann ein **Passwortbuch** verwendet werden, in dem lediglich die jeweilige **Startkoordinate** notiert wird.
+
+Das eigentliche Passwort ergibt sich ausschließlich durch:
+
+- die persönliche Cryptocard **und**
+- das geheime Muster
+
+### Sicherheitsprinzip
+
+Selbst wenn jemand sowohl die Tabelle als auch das Passwortbuch in die Hände bekommt, ist ohne Kenntnis des Musters **keine Rekonstruktion der Passwörter möglich**.
+
+---
 
 ## Vorschau
 
@@ -58,6 +123,10 @@ Zum eigentlichen Programm geht es [hier](./dist/cryptocard.html), ist aber auch 
 ---
 
 ## Build und Installation
+
+Grundsätzlich sei zu sagen dass ein `build` im klassischen Sinne nicht nötigt ist.
+Da ich allerdings [`esbuild`](https://esbuild.github.io/) als Bundler verwende, muss man aus den verschiedenen Scriptdateien, dem getrennten HTML und CSS eine monolithische HTML-Datei erstellen.
+Dies macht man mit folgenden schritten falls du eine der Dateien selbst bearbeitet hast.
 
 ### Build
 
@@ -84,25 +153,27 @@ Es wird die Datei `./dist/cryptocard.html` erstellt.
 Um Dir diese Schritte zu ersparen, habe ich die aktuelle Datei unter `./dist` belassen.
 So lange Du also keine Änderungen durchführen musst, kannst Du diese verwenden.
 
-### Installation
+### Installation (für Anwender)
 
-Installation ist nicht nötig, die HTML-Datei unter `./dist`nach dem Build enthält alles was zum Betrieb notwendig ist inklusive Assets.
-Einfach die HTML herunterladen und lokal per Doppelklick im Browser starten.
+Keine Installation nötig.
+Lade die Datei `cryptocard.html` aus dem `dist`-Ordner herunter und öffne sie lokal im Browser.
 
 ---
 
 ## ToDo
 
-- [ ] `.csv` Export implementieren
 - [ ] `.csv` Import implementieren
-- [ ] PDF Generierung Clientseitig im Browser
+- [ ] PDF-Generierung Clientseitig im Browser
+- [ ] Version besser für Smartphones überarbeiten
 
 ---
 
 ## Changelog
 
+- *1.2.2*  
+  - [x] Readme ergänzt und überarbeitet.  
 - *1.2.1*  
-  - [x] Tippfehler im Frontend korrigiert  
+  - [x] Tippfehler im Frontend korrigiert.  
 - *1.2.0*  
   - [x] `.csv`Export integriert  
   - [x] Einige Dateien aus Version 1.1.0 entfernt und Projekt bereinigt.
@@ -116,3 +187,5 @@ Einfach die HTML herunterladen und lokal per Doppelklick im Browser starten.
 ---
 
 ## [Lizenz](./LICENSE)
+
+MIT
