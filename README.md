@@ -146,7 +146,7 @@ npm install
 Anschliessend die HTML Datei bauen mit:
 
 ```bash
-npm run dev
+npm run build
 ```
 
 Es wird die Datei `./dist/cryptocard.html` erstellt.
@@ -170,22 +170,24 @@ Lade die Datei `cryptocard.html` aus dem `dist`-Ordner herunter und öffne sie l
 
 ## Changelog
 
-- *1.2.2*  
+- **1.2.3**  
+  - [x] Fehler in Readme korrigiert
+- **1.2.2**  
   - [x] Readme ergänzt und überarbeitet.  
-- *1.2.1*  
+- **1.2.1**  
   - [x] Tippfehler im Frontend korrigiert.  
-- *1.2.0*  
+- **1.2.0**  
   - [x] `.csv`Export integriert  
   - [x] Einige Dateien aus Version 1.1.0 entfernt und Projekt bereinigt.
         Der Ordnung halber, habe ich die Dateien im Repo belassen.  
-- *1.1.0*  
+- **1.1.0**  
   - [x] ⚠️ Breaking Changes  
         Komplett auf Modulversion (ESM) mit esbuild umgebaut.  
-- *1.0.0*  
+- **1.0.0**  
   - [x] Erste Version, händisch mit commonJS erstellt.
 
 ---
 
 ## [Lizenz](./LICENSE)
 
-MIT
+MIT - (C) 2024-2025 Adam Skotarczak
